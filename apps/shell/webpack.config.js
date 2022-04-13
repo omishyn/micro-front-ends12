@@ -85,7 +85,19 @@ module.exports = {
       library: {
         type: 'module',
       },
+      remotes: {
+        // Ensure that you use the port you specified in the configuration.
+        // Also the name must match what you declared in the admin module.
+        'admin': `${getRemoteEntryUrl( 3000)}`,
+        // Ensure that you use the port you specified in the configuration.
+        // Also the name must match what you declared in the dashboard module.
+        'dashboard': `${getRemoteEntryUrl(4000)}`
+      },
     }),
     sharedMappings.getPlugin(),
   ],
 };
+
+function getRemoteEntryUrl(port) {
+  return `http://localhost:${port}/remoteEntry.js`;
+}

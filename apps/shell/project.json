@@ -26,13 +26,11 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "500kb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "2kb"
             }
           ],
           "fileReplacements": [
@@ -64,12 +62,24 @@
           "browserTarget": "shell:build:production"
         },
         "development": {
-          "browserTarget": "shell:build:development"
+          "browserTarget": "shell:build:development",
+          "port": 5000,
+          "host": "0.0.0.0"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "publicHost": "http://localhost:4200"
+        "publicHost": "http://localhost:5000"
+      }
+    },
+    "serve-mfe": {
+      "builder": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx serve shell",
+          "nx serve admin",
+          "nx serve dashboard"
+        ]
       }
     },
     "extract-i18n": {
