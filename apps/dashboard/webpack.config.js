@@ -29,7 +29,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: 'dashboard',
-    publicPath: 'http://localhost:5000/',
+    publicPath: 'auto',
   },
   optimization: {
     runtimeChunk: false,
